@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <title>Ajax Example</title>
     <script>
-        var request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
         function searchInfo() {
-            var name = document.userform.studentname.value;
-            var url = "index.jsp?val=" + name;
+            let name = document.userform.studentname.value;
+            let url = "/index?val=" + name;
             try {
                 request.onreadystatechange = function () {
-                    if (request.readyState === 4 && request.status === 200) {
+                    if (request.readyState === 4) { // && request.status === 200) {
                         var val = request.responseText;
                         document.getElementById("myLocation").innerHTML = val;
                     }
-                }
+                };
                 request.open("GET", url);
                 request.send();
 

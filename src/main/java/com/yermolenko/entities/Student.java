@@ -5,6 +5,9 @@ public class Student {
     private String name;
     private float scholarship;
 
+    public Student() {
+    }
+
     public Student(int id, String name, float scholarship) {
         this.id = id;
         this.name = name;
